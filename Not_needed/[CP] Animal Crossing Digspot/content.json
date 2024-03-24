@@ -1,0 +1,16 @@
+{
+  "Format": "1.0",
+  "Changes": 
+    [
+       {
+          "Action": "EditImage",
+          "Target": "LooseSprites/Cursors",
+          "FromFile": "ACDigspot.png",
+	"ToArea": { 
+	"X": 368, 
+	"Y": 32, 
+	"Width": 64, 
+	"Height": 16 }
+       },
+    ]
+}
