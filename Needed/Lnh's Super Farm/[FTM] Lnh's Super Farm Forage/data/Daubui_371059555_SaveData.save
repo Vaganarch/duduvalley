@@ -1,0 +1,42 @@
+{
+  "WeatherForYesterday": "Sun",
+  "LNOSCounter": {},
+  "ExistingObjectLocations": {
+    "StumpsLnhSuperFarm1": []
+  },
+  "SavedObjects": [
+    {
+      "MapName": "Farm",
+      "Name": null,
+      "Tile": "53, 19",
+      "Type": "ResourceClump",
+      "ID": "Cauliflower",
+      "DaysUntilExpire": 26,
+      "SpawnTime": 600,
+      "ConfigItem": null,
+      "MonType": null
+    },
+    {
+      "MapName": "Custom_SuperFarm_Woods",
+      "Name": null,
+      "Tile": "13, 22",
+      "Type": "ResourceClump",
+      "ID": "600",
+      "DaysUntilExpire": 0,
+      "SpawnTime": 600,
+      "ConfigItem": null,
+      "MonType": null
+    },
+    {
+      "MapName": "Custom_SuperFarm_Woods",
+      "Name": null,
+      "Tile": "17, 25",
+      "Type": "ResourceClump",
+      "ID": "600",
+      "DaysUntilExpire": 0,
+      "SpawnTime": 600,
+      "ConfigItem": null,
+      "MonType": null
+    }
+  ]
+}
