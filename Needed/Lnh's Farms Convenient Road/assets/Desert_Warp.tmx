@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="9" height="3" tilewidth="16" tileheight="16" infinite="0" nextlayerid="23" nextobjectid="1180">
+ <tileset firstgid="1" name="z_DesertTiles" tilewidth="16" tileheight="16" tilecount="368" columns="16">
+  <image source="DesertTiles.png" width="256" height="368"/>
+ </tileset>
+ <layer id="1" name="Back" width="9" height="3">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfAAAAbAAB
+  </data>
+ </layer>
+ <layer id="3" name="Buildings" width="9" height="3">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAOuEsEDQBWwARS
+  </data>
+ </layer>
+ <layer id="5" name="Front" width="9" height="3">
+  <data encoding="base64" compression="zlib">
+   eJzbywABe/HQZ6FsQjQhAAA0Xgez
+  </data>
+ </layer>
+ <layer id="7" name="Paths" width="9" height="3">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfAAAAbAAB
+  </data>
+ </layer>
+ <layer id="9" name="AlwaysFront" width="9" height="3">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfAAAAbAAB
+  </data>
+ </layer>
+ <objectgroup id="2" name="Back"/>
+ <objectgroup id="4" name="Buildings">
+  <object id="1173" name="TileData" x="0" y="32" width="16" height="16">
+   <properties>
+    <property name="Action" value="Warp 26 24 Desert"/>
+   </properties>
+  </object>
+  <object id="1174" name="TileData" x="32" y="32" width="16" height="16">
+   <properties>
+    <property name="Action" value="Warp 37 21 Custom_ConvenientRoad"/>
+   </properties>
+  </object>
+  <object id="1177" name="TileData" x="64" y="32" width="16" height="16">
+   <properties>
+    <property name="Action" value="Message &quot;Lnh.ConvenientRoad.8&quot;"/>
+   </properties>
+  </object>
+  <object id="1178" name="TileData" x="96" y="32" width="16" height="16">
+   <properties>
+    <property name="Action" value="Warp 46 17 Farm"/>
+   </properties>
+  </object>
+  <object id="1179" name="TileData" x="128" y="32" width="16" height="16">
+   <properties>
+    <property name="Action" value="Warp 54 8 Farm"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="Front"/>
+ <objectgroup id="8" name="Paths"/>
+ <objectgroup id="10" name="AlwaysFront"/>
+</map>

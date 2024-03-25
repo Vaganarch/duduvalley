@@ -75,7 +75,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -133,7 +132,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -203,7 +201,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -247,7 +244,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -291,7 +287,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -335,7 +330,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -379,7 +373,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -429,7 +422,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -596,7 +588,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
@@ -673,7 +664,6 @@
           "WeatherYesterday": [],
           "WeatherToday": [],
           "WeatherTomorrow": [],
-          "GameStateQueries": [],
           "CPConditions": {},
           "EPUPreconditions": [],
           "LimitedNumberOfSpawns": null
