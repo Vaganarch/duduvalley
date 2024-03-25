@@ -17,7 +17,7 @@
   "StrongerMonsters": "false",
   "OlderSophiaPortraits": "false",
   "VanillaSandyPortraits": "false",
-  "MatureEvents": "false",
+  "MatureEvents": "true",
   "ShorterPathToBlueMoonVineyard": "false",
   "UseGaldoranThemeAllTimes": "false",
   "DisableGaldoranTheme": "false"
