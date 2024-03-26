@@ -1,0 +1,43 @@
+{
+    "Format": "1.25.0",
+    "Changes": [
+
+        {
+            "Action": "Load",
+            "Target": "Maps/FarmCave",
+            "FromFile": "assets/FantasyFarmCave.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/FantasyFarmCave_Leaf",
+            "FromFile": "assets/FantasyFarmCave_Leaf.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Minecarts",
+            "TargetField": [
+                "Default",
+                "Destinations"
+            ],
+            "Entries": {
+                "FantasyFarmCave.Minecart": {
+                    "Id": "FantasyFarmCave.Minecart",
+                    "DisplayName": "{{i18n:FantasyFarmCaveMorecarts.1}}",
+                    "TargetLocation": "FarmCave",
+                    "TargetTile": {
+                        "X": 16,
+                        "Y": 7
+                    },
+                    "TargetDirection": "down"
+                }
+            }
+        },
+        // {
+        //     "Action": "EditData",
+        //     "Target": "Data/Locations",
+        //     "Entries": {
+        //         "FarmCave": "-1/-1/-1/-1/156 -1 158 -1/156 -1 158 -1/156 -1 158 -1/156 -1 158 -1/-1"
+        //     }
+        // }
+    ]
+}
