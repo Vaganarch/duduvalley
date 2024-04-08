@@ -1,0 +1,60 @@
+{
+"Changes": [
+
+
+//We have to load all the portraits we're going to use and tell the game where they are. After this, the portraits should act just like vanilla, minus the fact that we Target them from a different place.
+///////Marlon, Gunther, Morris, and Wizard can be found in vanilla.json.
+
+//Step 1. This creates the files we'll be pulling from. Following HD Portraits etiquette (I think), I'm using the path "Mods/[author][description]/[NPC]". We have to make a file for every portrait in the game.
+    {       //Non-winter outfits for our seasonal friends who have indoor/outdoor variants.
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Andy, Mods/talkohSVEasonal/Claire, Mods/talkohSVEasonal/Martin, Mods/talkohSVEasonal/Olivia, Mods/talkohSVEasonal/Scarlett, Mods/talkohSVEasonal/Sophia, Mods/talkohSVEasonal/Susan, Mods/talkohSVEasonal/Victor",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Season}}.png",
+        "When": {
+            "Season |contains=winter": "false",
+        }
+    },
+    {       //They have variants in winter, so we load winter separately.
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Andy, Mods/talkohSVEasonal/Claire, Mods/talkohSVEasonal/Martin, Mods/talkohSVEasonal/Olivia, Mods/talkohSVEeasonal/Scarlett, Mods/talkohSVEasonal/Sophia, Mods/talkohSVEasonal/Susan, Mods/talkohSVEasonal/Victor",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_Winter_{{IndoorVariant}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "Season": "Winter",
+        }
+    },
+    {       //These guys don't have outdoor variants so they don't need a When condition; I'm loading them separately.
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Alesia, Mods/talkohSVEasonal/Camilla, Mods/talkohSVEasonal/Isaac, Mods/talkohSVEasonal/Jolyne, Mods/talkohSVEasonal/Jadu, Mods/talkohSVEasonal/Lance, Mods/talkohSVEasonal/Morgan",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Season}}.png",
+    },
+    {       //These NPCs don't have seasonal variants, either because they don't need them, or because they were added to SVE after the last update of SCC-SVE.
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Apples, Mods/talkohSVEasonal/ApplesSad, Mods/talkohSVEasonal/Axel, Mods/talkohSVEasonal/Brooklyn, Mods/talkohSVEasonal/Chloe, Mods/talkohSVEasonal/Dusty, Mods/talkohSVEasonal/HighlandsDwarf, Mods/talkohSVEasonal/Jace, Mods/talkohSVEasonal/Junimo, Mods/talkohSVEasonal/Mermaid, Mods/talkohSVEasonal/Peaches, Mods/talkohSVEasonal/Suki, Mods/talkohSVEasonal/Suki_IceFestival, Mods/talkohSVEasonal/Zoey",
+        "FromFile": "assets/Portraits/Non-Seasonal/{{TargetWithoutPath}}.png",
+    },
+    {       //Beach portraits.
+        "Action": "Load",
+        "Target": " Mods/talkohSVEasonal/Andy_Beach, Mods/talkohSVEasonal/Claire_Beach, Mods/talkohSVEasonal/Lance_Beach, Mods/talkohSVEasonal/Olivia_Beach, Mods/talkohSVEasonal/Scarlett_Beach, Mods/talkohSVEasonal/Sophia_Beach, Mods/talkohSVEasonal/Susan_Beach, Mods/talkohSVEasonal/Victor_Beach",
+        "FromFile": "assets/Portraits/Beach/{{TargetWithoutPath}}.png",
+    },
+
+//Step 2. This tells the game to look elsewhere for portraits, instead of Portraits/[NPC]. It also determines the resolution the game will display the portraits at.
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/Alesia, Mods/HDPortraits/Andy, Mods/HDPortraits/Apples, Mods/HDPortraits/Axel, Mods/HDPortraits/Brooklyn, Mods/HDPortraits/Camilla, Mods/HDPortraits/Chloe, Mods/HDPortraits/Claire, Mods/HDPortraits/Dusty, Mods/HDPortraits/HighlandsDwarf, Mods/HDPortraits/Isaac, Mods/HDPortraits/Jace, Mods/HDPortraits/Jadu, Mods/HDPortraits/Jolyne, Mods/HDPortraits/Junimo, Mods/HDPortraits/Lance, Mods/HDPortraits/Martin, Mods/HDPortraits/Mermaid, Mods/HDPortraits/Morgan, Mods/HDPortraits/Olivia, Mods/HDPortraits/Peaches, Mods/HDPortraits/Scarlett, Mods/HDPortraits/Sophia, Mods/HDPortraits/Suki, Mods/HDPortraits/Susan, Mods/HDPortraits/Victor, Mods/HDPortraits/Zoey, Mods/HDPortraits/Andy_Beach, Mods/HDPortraits/Claire_Beach, Mods/HDPortraits/Lance_Beach, Mods/HDPortraits/Olivia_Beach, Mods/HDPortraits/Sophia_Beach, Mods/HDPortraits/Susan_Beach, Mods/HDPortraits/Victor_Beach, Mods/HDPortraits/Suki_IceFestival, Mods/HDPortraits/ApplesSad",
+        "FromFile": "assets/data/size.json",
+    },
+
+//Step 3. The game knows where not to look because of Step 2; now we tell it where to look instead. We redirect Mods/HDPortraits/[NPC] to the files we made in Step 1.
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/Alesia, Mods/HDPortraits/Andy, Mods/HDPortraits/Apples, Mods/HDPortraits/Axel, Mods/HDPortraits/Brooklyn, Mods/HDPortraits/Camilla, Mods/HDPortraits/Chloe, Mods/HDPortraits/Claire, Mods/HDPortraits/Dusty, Mods/HDPortraits/HighlandsDwarf, Mods/HDPortraits/Isaac, Mods/HDPortraits/Jace, Mods/HDPortraits/Jadu, Mods/HDPortraits/Jolyne, Mods/HDPortraits/Junimo, Mods/HDPortraits/Lance, Mods/HDPortraits/Martin, Mods/HDPortraits/Mermaid, Mods/HDPortraits/Morgan, Mods/HDPortraits/Olivia, Mods/HDPortraits/Peaches, Mods/HDPortraits/Scarlett, Mods/HDPortraits/Sophia, Mods/HDPortraits/Suki, Mods/HDPortraits/Susan, Mods/HDPortraits/Victor, Mods/HDPortraits/Zoey, Mods/HDPortraits/Andy_Beach, Mods/HDPortraits/Claire_Beach, Mods/HDPortraits/Lance_Beach, Mods/HDPortraits/Olivia_Beach, Mods/HDPortraits/Sophia_Beach, Mods/HDPortraits/Susan_Beach, Mods/HDPortraits/Victor_Beach, Mods/HDPortraits/Suki_IceFestival, Mods/HDPortraits/ApplesSad",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/{{TargetWithoutPath}}",
+	    },
+    },
+
+//We're done! We can now target Mods/talkohSVEasonal/[NPC] whenever we'd like to change a portrait.
+],
+}

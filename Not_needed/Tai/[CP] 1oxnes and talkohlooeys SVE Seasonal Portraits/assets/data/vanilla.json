@@ -1,0 +1,87 @@
+{
+"Changes": [
+            //Load "new" NPCs. Wizard isn't included here in SVE.
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/MarlonFay, Mods/talkohSVEasonal/GuntherSilvian",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Season}}.png",
+    },
+    {       //Morris has an indoor variant.
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/MorrisTod",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Season}}.png",
+		"When": {
+			"Season |contains=winter": "false",
+		},
+	},
+	{
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/MorrisTod",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_Winter_{{IndoorVariant}}.png",
+		"Update": "OnLocationChange",
+		"When": {
+			"Season": "Winter",
+		},
+	},
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/MarlonFay, Mods/HDPortraits/GuntherSilvian, Mods/HDPortraits/MorrisTod",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/MarlonFay, Mods/HDPortraits/GuntherSilvian, Mods/HDPortraits/MorrisTod",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/{{TargetWithoutPath}}",
+	    },
+    },
+
+            //Replace the original portraits of old NPCs. Marlon isn't included here in SVE.
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Gunther",
+        "FromFile": "assets/Portraits/GuntherSilvian/GuntherSilvian_{{Season}}.png",
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Morris",
+        "FromFile": "assets/Portraits/MorrisTod/MorrisTod_{{Season}}.png",
+		"When": {
+			"Season |contains=winter": "false",
+		},
+	},
+	{
+		"Action": "Load",
+		"Target": "Mods/talkohSVEasonal/Morris",
+		"FromFile": "assets/Portraits/MorrisTod/MorrisTod_Winter_{{IndoorVariant}}.png",
+		"Update": "OnLocationChange",
+		"When": {
+			"Season": "Winter",
+		},
+	},
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/Wizard",
+        "FromFile": "assets/Portraits/Magnus/Magnus_{{Season}}.png",
+    },
+
+            //Load the vanilla portraits if they haven't been loaded yet. (i.e. the user has no HD portrait mods for vanilla.) I don't know if this works.
+            //If two mods both try to load Mods/HDPortraits/[NPC], NEITHER MOD WILL LOAD. So it's very important to make sure nothing else is loading it.
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/Wizard, Mods/HDPortraits/Gunther, Mods/HDPortraits/Morris",
+        "FromFile": "assets/data/size.json",
+        "When": {
+            "HasMod |contains=talkohlooeys.HiResPortraits, talkohlooeys.SeasonalPortraits": "false",
+        },
+    },
+            //This part is fine though, we want to do this regardless.
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/Wizard, Mods/HDPortraits/Gunther, Mods/HDPortraits/Morris",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/{{TargetWithoutPath}}",
+	    },
+    },
+],
+}

@@ -1,0 +1,139 @@
+{
+"Changes": [  
+///I've barely edited this. That said, I don't think it should have issues.
+
+                ///Conditional uniform changes for Claire.
+      
+        //Claire's Joja uniform
+    {
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Claire",
+        "FromFile": "assets/Portraits/Claire/Claire_Joja.png",
+        "When": {
+            "LocationName": "JojaMart"
+        },
+        "Update": "OnLocationChange"
+    },
+
+        //Claire's theater uniform
+    {
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Claire",
+        "FromFile": "assets/Portraits/Claire/Claire_Theater.png",
+        "When": {
+            "Spouse |contains=Claire": false,
+            "DayOfWeek": "Monday, Wednesday, Thursday, Friday, Sunday",
+            "HasSeenEvent |contains=502261": false,
+            "LocationName": "MovieTheater"
+        },
+        "Update": "OnLocationChange"
+    },
+    {       //if you're married to claire
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Claire",
+        "FromFile": "assets/Portraits/Claire/Claire_Theater.png",
+        "When": {
+            "Spouse": "Claire",
+            "DayOfWeek": "Monday, Wednesday, Thursday, Sunday",
+            "HasSeenEvent |contains=502261": false,
+            "LocationName": "MovieTheater"
+        },
+        "Update": "OnLocationChange"
+    },
+
+    {       //override, since she's not working during a certain event. uses seasonal outfits.
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Claire",
+        "FromFile": "assets/Portraits/Claire/Claire_{{Season}}.png",
+        "When": {
+            "Spouse |contains=Claire": true,
+            "LocationName": "MovieTheater",
+            "HasSeenEvent |contains=4269703": true,
+            "HasSeenEvent |contains=4269704": false,
+            "Time": "{{Range: 1600, 2000}}"
+        },
+        "Update": "OnLocationChange"
+    },
+
+
+
+
+                ///Conditional uniform changes for Martin.
+      
+        //Martin's Joja uniform
+    {
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Martin",
+        "FromFile": "assets/Portraits/Martin/Martin_Joja.png",
+        "When": {
+            "LocationName": "JojaMart"
+        },
+        "Update": "OnLocationChange"
+    },
+
+        //Martin's theater uniform
+    {
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Martin",
+        "FromFile": "assets/Portraits/Martin/Martin_Theater.png",
+        "When": {
+            "Spouse |contains=Claire": false,
+            "DayOfWeek": "Tuesday, Saturday",
+            "HasSeenEvent |contains=502261": false,
+            "LocationName": "MovieTheater"
+        },
+        "Update": "OnLocationChange"
+    },
+    {       //if you're married to claire
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Martin",
+        "FromFile": "assets/Portraits/Martin/Martin_Theater.png",
+        "When": {
+            "Spouse": "Claire",
+            "DayOfWeek": "Tuesday, Friday, Saturday",
+            "HasSeenEvent |contains=502261": false,
+            "LocationName": "MovieTheater"
+        },
+        "Update": "OnLocationChange"
+    },
+    {       //if you're married to claire and have seen a certain event
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Martin",
+        "FromFile": "assets/Portraits/Martin/Martin_Theater.png",
+        "When": {
+            "Spouse": "Claire",
+            "DayOfWeek": "Tuesday, Wednesday, Friday, Saturday",
+            "HasSeenEvent |contains=502261": false,
+            "LocationName": "MovieTheater",
+            "HasSeenEvent |contains=4269703": true
+        },
+        "Update": "OnLocationChange"
+    },
+    
+    
+    
+        //a specific event that changes their names
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/**Martin**",
+        "FromFile": "assets/Portraits/Martin/Martin_Theater.png"
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/**Claire**",
+        "FromFile": "assets/Portraits/Claire/Claire_Theater.png"
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/**Martin**, Mods/HDPortraits/**Claire**",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/**Martin**, Mods/HDPortraits/**Claire**",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/{{TargetWithoutPath}}",
+        },
+    },
+],
+}

@@ -1,0 +1,37 @@
+{
+	"Name": "1oxnes and talkohlooeys' Seasonal SVE Portraits",
+	"Author": "1oxnes",
+	"Version": "1.3.2",
+	"Description": "High-res portraits for Stardew Valley Expanded, to use with Seasonal Cute Characters.",
+	"UniqueID": "1oxnes.SeasonalSVE",
+	"UpdateKeys": [ "Nexus:11523" ],
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher",
+	},
+	"Dependencies": [
+		{
+			"UniqueID": "Poltergeister.SeasonalCuteCharacters",
+			"IsRequired": false,
+		},
+		{
+			"UniqueID": "Poltergeister.SeasonalCuteSpritesSVE",
+			"IsRequired": true
+		},
+		{
+			"UniqueID": "talkohlooeys.HiResPortraits",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "talkohlooeys.SeasonalPortraits",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "FlashShifter.StardewValleyExpandedALL",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "FlashShifter.StardewValleyExpandedCP",
+			"IsRequired": false
+		},
+	]
+}

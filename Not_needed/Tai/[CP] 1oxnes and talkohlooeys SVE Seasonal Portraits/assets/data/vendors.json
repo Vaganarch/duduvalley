@@ -1,0 +1,120 @@
+{
+"Changes": [
+
+////Don't know if this will be the right format moving forward, but until I get a response, at least I have this. Based on my Salt Factory mod.
+
+
+
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/STF.AdventurerLedger, Mods/talkohSVEasonal/STF.AlesiaVendor, Mods/talkohSVEasonal/STF.AxelVendor1, Mods/talkohSVEasonal/STF.BearVendor, Mods/talkohSVEasonal/STF.BlueJunimoVendor, Mods/talkohSVEasonal/STF.BrooklynVendor, Mods/talkohSVEasonal/STF.CamillaVendor, Mods/talkohSVEasonal/STF.ChloeVendor1, Mods/talkohSVEasonal/STF.ClaireShop, Mods/talkohSVEasonal/STF.GreyJunimoVendor, Mods/talkohSVEasonal/STF.HighlandsDwarfShop, Mods/talkohSVEasonal/STF.IsaacVendor, Mods/talkohSVEasonal/STF.JaceVendor, Mods/talkohSVEasonal/STF.LewisLedger, Mods/talkohSVEasonal/STF.MartinShop, Mods/talkohSVEasonal/STF.MorrisLedger, Mods/talkohSVEasonal/STF.OrangeJunimoVendor, Mods/talkohSVEasonal/STF.PurpleJunimoVendor, Mods/talkohSVEasonal/STF.RedJunimoVendor, Mods/talkohSVEasonal/STF.SophiaLedger, Mods/talkohSVEasonal/STF.YellowJunimoVendor, Mods/talkohSVEasonal/STF.ZoeyVendor",
+        "FromFile": "assets/Vendors/{{TargetWithoutPath}}.png",
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.AdventurerLedger, Mods/HDPortraits/STF.AlesiaVendor, Mods/HDPortraits/STF.AxelVendor1, Mods/HDPortraits/STF.BearVendor, Mods/HDPortraits/STF.BlueJunimoVendor, Mods/HDPortraits/STF.BrooklynVendor, Mods/HDPortraits/STF.CamillaVendor, Mods/HDPortraits/STF.ChloeVendor1, Mods/HDPortraits/STF.ClaireShop, Mods/HDPortraits/STF.GreyJunimoVendor, Mods/HDPortraits/STF.HighlandsDwarfShop, Mods/HDPortraits/STF.IsaacVendor, Mods/HDPortraits/STF.JaceVendor, Mods/HDPortraits/STF.LewisLedger, Mods/HDPortraits/STF.MartinShop, Mods/HDPortraits/STF.MorrisLedger, Mods/HDPortraits/STF.OrangeJunimoVendor, Mods/HDPortraits/STF.PurpleJunimoVendor, Mods/HDPortraits/STF.RedJunimoVendor, Mods/HDPortraits/STF.SophiaLedger, Mods/HDPortraits/STF.YellowJunimoVendor, Mods/HDPortraits/STF.ZoeyVendor",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.AdventurerLedger, Mods/HDPortraits/STF.AlesiaVendor, Mods/HDPortraits/STF.AxelVendor1, Mods/HDPortraits/STF.BearVendor, Mods/HDPortraits/STF.BlueJunimoVendor, Mods/HDPortraits/STF.BrooklynVendor, Mods/HDPortraits/STF.CamillaVendor, Mods/HDPortraits/STF.ChloeVendor1, Mods/HDPortraits/STF.ClaireShop, Mods/HDPortraits/STF.GreyJunimoVendor, Mods/HDPortraits/STF.HighlandsDwarfShop, Mods/HDPortraits/STF.IsaacVendor, Mods/HDPortraits/STF.JaceVendor, Mods/HDPortraits/STF.LewisLedger, Mods/HDPortraits/STF.MartinShop, Mods/HDPortraits/STF.MorrisLedger, Mods/HDPortraits/STF.OrangeJunimoVendor, Mods/HDPortraits/STF.PurpleJunimoVendor, Mods/HDPortraits/STF.RedJunimoVendor, Mods/HDPortraits/STF.SophiaLedger, Mods/HDPortraits/STF.YellowJunimoVendor, Mods/HDPortraits/STF.ZoeyVendor",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/{{TargetWithoutPath}}",
+	    },
+    },
+
+
+
+
+        //One-time stuff
+    //Claire Joja Day
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.ClaireShopJojaDay",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.ClaireShopJojaDay",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.ClaireShop",
+	    },
+    },
+    //Martin Joja Day
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.MartinShopJojaDay",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.MartinShopJojaDay",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.MartinShop",
+	    },
+    },
+    //Vineyard
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.AuroraVineyardDeedLedger",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.AuroraVineyardDeedLedger",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.MorrisLedger",
+	    },
+    },
+    //Chloe
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.ChloeVendor2",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.ChloeVendor2",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.ChloeVendor1",
+	    },
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.ChloeVendor3",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.ChloeVendor3",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.ChloeVendor1",
+	    },
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.ChloeVendor4",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.ChloeVendor4",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.ChloeVendor1",
+	    },
+    },
+    //Axel
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/STF.AxelVendor2",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/STF.AxelVendor2",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/STF.AxelVendor1",
+	    },
+    },
+],
+}

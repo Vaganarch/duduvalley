@@ -1,0 +1,204 @@
+{
+"Format": "1.25.0",
+"ConfigSchema": {
+    "Festival Outfits": {
+        "AllowValues": "true, false",
+        "Default": "true",
+        "Description": "Characters dress up for festivals. Set to the same value as Seasonal Cute Characters.",
+    },
+    "Extra Outfits": {
+        "AllowValues": "true, false",
+        "Default": "true",
+        "Description": "Characters have work clothes, etc. Set to the same value as Seasonal Cute Characters.",
+    },
+},
+
+"DynamicTokens": [
+    //Checks whether the character is inside or outside, for winter outfits.
+    {
+        "Name": "IndoorVariant",
+        "Value": "Indoor",
+        "When": {
+            "IsOutdoors": "false",
+        }
+    },
+    {
+        "Name": "IndoorVariant",
+        "Value": "Outdoor",
+        "When": {
+            "IsOutdoors": "true",
+        }
+    },
+    //Checks if there's a festival happening, for festival outfits.
+    {
+        "Name": "Festival",
+        "Value": "FlowerDance",
+        "When": {
+            "DayEvent": "Flower Dance",
+            "LocationName": "forest, temp",
+        }
+    },
+    {
+        "Name": "Festival",
+        "Value": "SpiritsEve",
+        "When": {
+            "DayEvent": "Spirit's Eve",
+            "LocationName": "town, temp",
+        }
+    },
+],
+"Changes": [
+	{
+        "Action": "Include",
+        "FromFile": "assets/data/redirect.json",
+    },
+	{
+        "Action": "Include",
+        "FromFile": "assets/data/vanilla.json",
+    },
+	{
+        "Action": "Include",
+        "FromFile": "assets/data/theaterkids.json",
+    },
+	
+	//Extra Outfits outfits.
+    //Aerobics class.
+    {
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Claire, Mods/talkohSVEasonal/Olivia",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_Aerobics.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "DayOfWeek": "Tuesday",
+            "LocationName": "SeedShop",
+            "Extra Outfits": "true",
+            "Weather": "sun, wind, snow",
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Claire, Mods/talkohSVEasonal/Olivia",
+        "FromFile": "assets/Portraits/{{TargetWithoutPath}}/{{TargetWithoutPath}}_Aerobics.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "Time": "{{Range: 1100, 1500}}",
+            "Hearts:Harvey": "{{range: 6, 14}}",
+            "LocationName": "SeedShop",
+            "Extra Outfits": "true",
+            "HasSeenEvent: currentPlayer |contains=58": false,
+        }
+    },
+	{
+//		Beach Portraits
+		"Action": "EditImage",
+		"Target": "Mods/talkohSVEeasonal/Andy, Mods/talkohSVEasonal/Claire, Mods/talkohSVEasonal/Lance, Mods/talkohSVEasonal/Olivia, Mods/talkohSVEasonal/Scarlett, Mods/talkohSVEasonal/Sophia, Mods/talkohSVEasonal/Susan, Mods/talkohSVEeasonal/Victor", 
+		"FromFile": "assets/Portraits/Beach/{{TargetWithoutPath}}_Beach.png",
+		"Update": "OnLocationChange",
+		"When": {
+			"LocationName": "IslandSouth, IslandWest, IslandEast, IslandNorth",
+			"Time": "{{Range: 1130, 1820}}",
+		},
+	},
+//		Festival outfits.
+    {
+        "LogName": "Festival Portraits",
+        "Action": "EditImage",
+		"Target": "Mods/talkohSVEasonal/Alesia, Mods/talkohSVeasonal/Andy, Mods/talkohSVeasonal/Claire, Mods/talkohSVeasonal/GuntherSilvian, Mods/talkohSVEasonal/Isaac, Mods/talkohSVEasonal/Lance, Mods/talkohSVeasonal/Magnus, Mods/talkohSVeasonal/MarlonFay, Mods/talkohSVeasonal/Martin, Mods/talkohSVeasonal/Olivia, Mods/talkohSVeasonal/Sandy, Mods/talkohSVEasonal/Scarlett, Mods/talkohSVeasonal/Sophia, Mods/talkohSVeasonal/Susan, Mods/talkohSVeasonal/Victor",
+        "FromFile": "assets/Portraits/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "Festival Outfits": "true",
+        },
+    },
+//		Vendors
+	{
+        "LogName": "talkoh's SVE Vendor Portraits",
+        "Action": "Include",
+        "FromFile": "assets/data/vendors.json",
+    },
+//		Sophia's makeup
+    {
+        "Action": "EditImage",
+        "PatchMode": "Overlay",
+        "Target": "Mods/talkohSVEasonal/Sophia",
+        "FromFile": "assets/Portraits/Sophia/MakeupOverlay.png",
+        "When": {
+            "DayOfWeek": "Friday, Saturday, Sunday",
+        },
+    },
+
+//		Scarlett's cosplay
+	{
+        "Action": "EditImage",
+        "Target": "Mods/talkohSVEasonal/Scarlett",
+        "When": {
+            "LocationName": "Custom_ZCCC_Entrance, Custom_ZCCC_FoodCourt, Custom_ZCCC_MainHall, Custom_ZCCC_Stage, Custom_ZCCC_VendorFloor, Custom_ZuzuCityStreet, Custom_Highway, Custom_ZCCC_Courtyard, BusStop"
+        },
+        "Update": "OnLocationChange",
+        "FromFile": "assets/Portraits/Non-Seasonal/Scarlett_Cosplay.png"
+    },
+    
+// 		Suki
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/Traveler, Mods/HDPortraits/TravelerNightMarket",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/Traveler, Mods/HDPortraits/TravelerNightMarket",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/Suki",
+        },
+    },
+
+
+
+
+
+
+
+
+
+    ///SPOILERS BELOW
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "Action": "Load",
+        "Target": "Mods/talkohSVEasonal/ScarlettFake",
+        "FromFile": "assets/Portraits/Non-Seasonal/Scarlett.png"
+    },
+    {
+        "Action": "Load",
+        "Target": "Mods/HDPortraits/ScarlettFake",
+        "FromFile": "assets/data/size.json",
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/HDPortraits/ScarlettFake",
+        "Entries": {
+            "Portrait": "Mods/talkohSVEasonal/ScarlettFake",
+	    },
+    },
+],
+}
