@@ -10,6 +10,10 @@
 			"Name": "JojaRandom",
 			"Value": "{{Random:Default, Shift |key=JojaShift}}"
 		},
+		{
+			"Name": "MouseFriends",
+			"Value": "{{Random:Beanie, Hamster, Bow, Dipper, Flower, Goggles, Headband, Link, Marlon, Default, Post, Red, Sailor, Strawhat, Wizard |key=MouseFriends}}"
+		},
 	],
 
 	"ConfigSchema":
@@ -478,6 +482,14 @@
 			"FromFile": "assets/{{TargetWithoutPath}}/{{TargetWithoutPath}}_Hippie.png",
 			"When": {"HasMod": "CP.Hippie.Trailer.Trader"}
 		},	
+// Hat Mouse and Friends Support
+		{
+			"LogName": "Hat Mouse and Friends Support",
+			"Action": "EditImage",
+			"Target": "Mods/DolphINaF.VendorPortraits/HatMouse",
+			"FromFile": "assets/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{MouseFriends}}.png",
+			"When": {"HasMod": "Dora.HatMouseAndFriends"}
+		},	
 // Dwarf Portrait Replacement Support
 		{
 			"LogName": "Dwarf Portrait Replacement",
@@ -486,7 +498,7 @@
 			"FromFile": "assets/{{TargetWithoutPath}}/{{TargetWithoutPath}}_Alter.png",
 			"When": {"HasMod": "LavenderSkelly.DwarfPortraitReplacement"}
 		},
-// Stardew Valley Expanded Support Support
+// Stardew Valley Expanded Support
 		{
 			"LogName": "CC Concession Portrait if SVE",
 			"Action": "EditData",
@@ -502,7 +514,7 @@
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
 			}
 		},
-// Julieat and Jessie Support
+// Juliet and Jessie Support
 		{
 			"LogName": "CC Concession Portrait if Juliet",
 			"Action": "EditImage",
